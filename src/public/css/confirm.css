@@ -1,0 +1,10 @@
+/* public/css/confirm.css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}

@@ -1,0 +1,13 @@
+/* public/css/index.css */
+body {
+    font-family: sans-serif;
+    padding: 40px;
+}
+
+input,
+textarea,
+select {
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+}
