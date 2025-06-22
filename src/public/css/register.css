@@ -1,0 +1,109 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f1ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* フォーム全体：横長に、中央寄せ */
+form {
+    background-color: #ffffff;
+    padding: 2.5rem 2.5rem;
+    border: 2px solid #d6cfc8;
+    border-radius: 4px;
+    width: 700px;
+    /* 横長な白枠 */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* タイトル */
+h1 {
+    font-size: 1.8rem;
+    color: #4f4034;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* ラベル */
+label {
+    display: block;
+    font-size: 1rem;
+    color: #5f4d3e;
+    margin-top: 1.2rem;
+    margin-bottom: 0.3rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* 入力欄：幅を制限して中央寄せ */
+input {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1.5px solid #c7bdb3;
+    border-radius: 2px;
+    background-color: #faf9f8;
+    color: #333;
+}
+
+input:focus {
+    outline: none;
+    border-color: #a89580;
+    background-color: #fffdfc;
+}
+
+input::placeholder {
+    color: #aaa29a;
+}
+
+/* エラーメッセージ */
+div[style*="color: red;"] {
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    color: red;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* 登録ボタン：幅狭め・中央寄せ・コンパクト */
+button {
+    margin-top: 2rem;
+    padding: 0.6rem 2.5rem;
+    background-color: #c6a27b;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #b08c67;
+}
+
+/* ログインリンク：右下風に見せる */
+.login-link {
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.login-link a {
+    text-decoration: none;
+    color: #7a6654;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

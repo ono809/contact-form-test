@@ -2,33 +2,18 @@
 
 @section('title', '確認画面')
 
-@section('styles')
-<link rel="stylesheet" href="{{ asset('css/confirm.css') }}">
-@endsection
-
 @section('content')
-<h2>Confirm</h2>
-
-<form method="POST" action="{{ route('contact.send') }}">
+<form method="POST" action="{{ route('register.thanks') }}">
     @csrf
+    <h1>確認</h1>
 
-    <table>
-        <tr><th>お名前</th><td>{{ $inputs['last_name'] }} {{ $inputs['first_name'] }}</td></tr>
-        <tr><th>性別</th><td>{{ $inputs['gender'] === '1' ? '男性' : ($inputs['gender'] === '2' ? '女性' : 'その他') }}</td></tr>
-        <tr><th>メールアドレス</th><td>{{ $inputs['email'] }}</td></tr>
-        <tr><th>電話番号</th><td>{{ $inputs['tel1'] }}-{{ $inputs['tel2'] }}-{{ $inputs['tel3'] }}</td></tr>
-        <tr><th>住所</th><td>{{ $inputs['address'] }}</td></tr>
-        <tr><th>建物名</th><td>{{ $inputs['building_name'] }}</td></tr>
-        <tr><th>お問い合わせの種類</th><td>{{ $inputs['category'] }}</td></tr>
-        <tr><th>お問い合わせ内容</th><td>{{ $inputs['content'] }}</td></tr>
-    </table>
+    <p><strong>お名前：</strong>{{ $inputs['name'] }}</p>
+    <p><strong>メールアドレス：</strong>{{ $inputs['email'] }}</p>
 
-    {{-- Hiddenで全データ送る --}}
-    @foreach ($inputs as $key => $value)
-        <input type="hidden" name="{{ $key }}" value="{{ $value }}">
-    @endforeach
+    <input type="hidden" name="name" value="{{ $inputs['name'] }}">
+    <input type="hidden" name="email" value="{{ $inputs['email'] }}">
+    <input type="hidden" name="password" value="{{ $inputs['password'] }}">
 
-    <button type="submit" name="action" value="submit">送信</button>
-    <button type="submit" name="action" value="back">修正</button>
+    <button type="submit">送信</button>
 </form>
 @endsection
