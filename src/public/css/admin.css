@@ -1,127 +1,193 @@
-
+/* 全体背景・文字 */
 body {
+    background-color: #f4f1ee;
     font-family: 'Arial', sans-serif;
-    background-color: #f9f5f0;
-    /* ベージュ背景 */
-    color: #333;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    color: #4f4034;
 }
 
+/* ヘッダー */
+header {
+    text-align: center;
+    background-color: #f4f1ee;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #ddd0c8;
+}
+
+.main-title {
+    font-size: 2rem;
+    margin: 0;
+    color: #4f4034;
+}
+
+/* 中央にまとめるコンテナ */
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1rem;
 }
 
-.title {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #5c493e;
+/* タイトルエリア */
+.admin-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
+.admin-header h1 {
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+.admin-header h2 {
+    font-size: 1.3rem;
+    color: #7a6654;
+    margin-top: 0.3rem;
+}
+
+/* 検索フォーム */
 .search-form {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
 }
 
-.search-form input[type="text"],
-.search-form input[type="date"],
+.search-form input,
 .search-form select {
-    padding: 8px 12px;
+    padding: 0.5rem;
+    font-size: 0.95rem;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fffaf3;
-    font-size: 14px;
-    flex: 1;
+    border-radius: 4px;
     min-width: 180px;
+    background-color: #fff;
+}
+
+.search-form input[type="date"] {
+    padding-right: 1rem;
+}
+
+/* ボタンエリア */
+.button-group {
+    display: flex;
+    gap: 0.8rem;
 }
 
 .search-form button,
-.search-form .reset-btn {
-    padding: 8px 16px;
-    background-color: #d8b08c;
+.reset-btn,
+.export-pagination button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background-color: #c6a27b;
     border: none;
-    border-radius: 8px;
     color: white;
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.search-form .reset-btn {
-    background-color: #aaa;
+.reset-btn {
+    background-color: #999;
     text-decoration: none;
-    display: inline-block;
-    line-height: 2.2;
-    padding: 5px 12px;
+    text-align: center;
 }
 
 .search-form button:hover,
-.search-form .reset-btn:hover {
-    background-color: #c89b77;
+.reset-btn:hover,
+.export-pagination button:hover {
+    background-color: #b08c67;
 }
 
+/* エクスポート & ページネーション横並び */
 .export-pagination {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin: 1rem 0;
 }
 
-.export-pagination form button {
-    padding: 8px 14px;
-    background-color: #8cbaa7;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
+.export-pagination form {
+    margin: 0;
 }
 
-.export-pagination form button:hover {
-    background-color: #76a394;
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
 }
 
+/* テーブル */
 .contact-table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #fffdf9;
+    margin-top: 1.5rem;
+    background-color: #fff;
 }
 
 .contact-table th,
 .contact-table td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-    font-size: 14px;
+    border: 1px solid #d6cfc8;
+    padding: 0.75rem;
+    text-align: center;
+    font-size: 0.9rem;
 }
 
 .contact-table th {
-    background-color: #f0e8dc;
-    color: #5c493e;
+    background-color: #b08c67;
+    color: #fff;
+    font-weight: bold;
 }
 
+/* 詳細ボタン */
 .detail-btn {
-    padding: 6px 10px;
-    background-color: #b2917d;
-    border: none;
-    border-radius: 6px;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    background-color: #c6a27b;
     color: #fff;
-    font-size: 12px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 .detail-btn:hover {
-    background-color: #a07963;
+    background-color: #b08c67;
 }
 
-.pagination {
-    margin-left: auto;
-    font-size: 14px;
+/* モーダル */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+}
+
+.modal .close {
+    position: absolute;
+    top: 0.7rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+}
+
+.modal .close:hover {
+    color: #333;
 }

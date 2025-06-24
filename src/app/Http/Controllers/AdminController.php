@@ -95,4 +95,11 @@ class AdminController extends Controller
         Contact::findOrFail($id)->delete();
         return redirect()->route('admin.index')->with('success', '削除しました');
     }
+
+    public function show($id)
+    {
+    $contact = Contact::findOrFail($id);
+    return view('admin.partials.detail', compact('contact'));
+    }
+
 }

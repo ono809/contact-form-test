@@ -51,10 +51,13 @@ Route::post('/register/thanks', function (Request $request) {
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-    Route::get('/admin/export', [AdminController::class, 'export'])->name('admin.export');
-    Route::delete('/admin/delete/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin/export', [AdminController::class, 'export'])->name('admin.export');
+Route::delete('/admin/delete/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
+Route::get('/admin/{id}', [AdminController::class, 'show'])->name('admin.show');
+
 });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
